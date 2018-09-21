@@ -34,12 +34,10 @@
                 </tfoot>
                 <tbody>
                   <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
+                    <td>{{ datas.sportid.name }}}</td>
+                    <td>{{ datas.weight }}}</td>
+                    <td>{{ datas.duration }}}</td>
+                    <td>{{ (datas.sportid.cal/60) * datas.weight * datas.duration }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -66,7 +64,7 @@
       }).done(function(data){
          console.log(data)
       })
-      
+
     })
 
     //修改

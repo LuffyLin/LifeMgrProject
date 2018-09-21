@@ -38,7 +38,9 @@ def sportitem(request):
 # modify user : Luffy Lin
 # modify date : 2018/09/21
 def sportrecord(request,id = 0):
-    pass
+    dates = sportrecord.all()
+    return render(request, 'sport/sportrecord.html', locals())
+
 
 # # function desc. : 個人運動紀錄管理 - 新增
 # # parameter : id
