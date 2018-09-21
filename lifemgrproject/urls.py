@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter 
+from sport import views
+
+router = DefaultRouter()
+router.register(r'sportlist',views.SportItemViewSet)
+router.register(r'sportrecord',views.SportRecordViewSet)
 
 urlpatterns = [
+    path('api',include(router.urls)),
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
     path('limit',include('limit.urls')),
@@ -24,4 +31,5 @@ urlpatterns = [
     path('worklist',include('worklist.urls')),
     path('food',include('food.urls')),
     path('sport',include('sport.urls')),
+    
 ]
