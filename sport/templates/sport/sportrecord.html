@@ -54,7 +54,43 @@
 {% endblock %}
 
 {% block scripts %}
+<script>
+  
+  $(document).ready(function(){
+    //新增
+    $("dataTable td .tbbtn_add").click(function(){
+      $.ajax({
+          'url':'/api/sportrecord/',
+          'type':'POST',
+          'data':datas
+      }).done(function(data){
+         console.log(data)
+      })
+      
+    })
 
+    //修改
+    $("dataTable td .tbbtn_edit").click(function(){
+      $.ajax({
+          'url':'/api/sportrecord/',
+          'type':'PUT',
+          'data':datas
+      }).done(function(data){
+         console.log(data)
+      })
+    })
 
+    //刪除
+    $("dataTable td .tbbtn_delete").click(function(){
+      $.ajax({
+          'url':'/api/sportrecord/',
+          'type':'DELETE',
+          'data':datas
+      }).done(function(data){
+         console.log(data)
+      })
+    })
 
+  })   
+</script>
 {% endblock %}
